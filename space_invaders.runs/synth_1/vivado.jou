@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Sun Oct 13 17:46:36 2019
+# Process ID: 13904
+# Current directory: D:/Universidad/CuartoCurso/Integrados/space_invaders/space_invaders.runs/synth_1
+# Command line: vivado.exe -log SpaceInv.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source SpaceInv.tcl
+# Log file: D:/Universidad/CuartoCurso/Integrados/space_invaders/space_invaders.runs/synth_1/SpaceInv.vds
+# Journal file: D:/Universidad/CuartoCurso/Integrados/space_invaders/space_invaders.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source SpaceInv.tcl -notrace

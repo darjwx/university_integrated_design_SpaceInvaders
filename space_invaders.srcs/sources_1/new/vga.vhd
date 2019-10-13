@@ -90,7 +90,7 @@ begin
   process(reset,clk)
   begin
     if reset = '1' then
-      cont_800 <= (OTHERS => '0');
+      cont_521 <= (OTHERS => '0');
     elsif rising_edge(clk) then
       if enableH = '1' then
       cont_521 <= cont_521 + 1;
@@ -102,12 +102,25 @@ begin
   end process;
   enableV <= '1' when cont_521 = 520 else '0';
 
+  process(color)
+  begin
+    if color = "000" then
+      R <= "0000";
+      G <= "0000";
+      B <= "0000";
+    elsif color = "111" then
+      R <= "1111";
+      G <= "1111";
+      B <= "1111";
+    end if;
+  end process;
+
   --Envia señales de sincronizacion
   Hsync <= '1' when cont_800 > 653 AND cont_800 < 751 else '0';
   Vsync <= '1' when cont_521 > 489 AND cont_521 < 491 else '0';
 
   --Envia x,y
-  X <= cont_800(9)&cont_800(8)&cont_800(7)&cont_800(6)&cont_800(5);
-  Y <= cont_521(9)&cont_521(8)&cont_521(7)&cont_521(6)&cont_521(5);
+  X <= cont_800;
+  Y <= cont_521;
 
 end Behavioral;

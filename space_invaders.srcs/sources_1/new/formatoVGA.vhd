@@ -35,7 +35,7 @@ use ieee.NUMERIC_STD.all;
 entity formatoVGA is
     Port ( X : in UNSIGNED (9 downto 0);
            Y : in UNSIGNED (9 downto 0);
-           Color : out UNSIGNED (3 downto 0));
+           Color : out UNSIGNED (2 downto 0));
 end formatoVGA;
 
 architecture Behavioral of formatoVGA is
@@ -46,16 +46,20 @@ begin
   rX <= X(9)&X(8)&X(7)&X(6)&X(5);
   rY <= Y(9)&Y(8)&Y(7)&Y(6)&Y(5);
 
-  process(X,Y)
+  process(rX,rY)
   begin
     if rY(0) = '0' and rX(0) = '0' then
       --color blanco
+      Color <= "000";
     elsif rY(0) = '0' and rX(0) = '1' then
       --color negro
+      Color <= "111";
     elsif rY(0) ='1' and rX(0) = '0' then
       ----color negro
+      Color <= "111";
     elsif rY(0) = '1' and rX(0) = '1' then
       --blanco
+      Color <= "000";
     end if;
   end process;
 
